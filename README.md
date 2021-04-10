@@ -1,7 +1,12 @@
 # crimewarning
 make domain that makes you say "bah" and sheep will pop up every time
+
+https://www.crimeometer.com/docs
+this looks good
+
 spot crime
 - example crime output, lists specific crimes
+
 ```
 { cdid: 46846473,
     type: 'Assault',
