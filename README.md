@@ -1,5 +1,19 @@
 # crimewarning
+TODO
+- Make functioning firebase login system
+- functioning usage of crime api, retrieving crime score, and hoepfully data viz for crime map
+- fucntioning of courier api to send messages through several means (for example sms or push or email)
+- basic UI setup
+
+data object for user
+
+
+
 make domain that makes you say "bah" and sheep will pop up every time
+
+
+
+
 
 https://www.crimeometer.com/docs
 this looks good
