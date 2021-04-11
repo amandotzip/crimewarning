@@ -87,14 +87,15 @@ export default class TabTwoScreen extends React.Component {
       this.courier
         .send({
           eventId: "M230QKVSP04E1PK5XVQ7Y04BG730",
-          recipientId: "cce68751-102c-44ce-bb99-1af2d3d13287",
+          recipientId: "31d96803-d168-4b72-a446-175a6caaa85f",
           profile: {
-            phone_number: "240-479-1412",
+            phone_number: "240-413-7892",
           },
           data: {
-            name: "Ferzam Mohammad",
+            name: "Amanuel Awoke",
           },
-          override: {},
+          override: {
+          },
         })
         .then(({ messageId }) => console.log(messageId))
         .catch((err) => console.error(err));
