@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#EEF5DB",
+    backgroundColor: "#B8D8D8",
   },
   title: {
     padding: 20,
@@ -112,6 +112,6 @@ const styles = StyleSheet.create({
   },
   map: {
     width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height / 1.15,
+    height: Dimensions.get("window").height,
   },
 });

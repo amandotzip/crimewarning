@@ -23,22 +23,22 @@ export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
   const appNav = (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="TabTwo"
       tabBarOptions={{
         activeTintColor: "#FE5F55" /* Colors[colorScheme].tint */,
       }}
     >
       <BottomTab.Screen
-        name="TabOne"
+        name="Info"
         component={TabOneNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="information" color={color} />
+            <TabBarIcon name="information-circle" color={color} />
           ),
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
+        name="Map"
         component={TabTwoNavigator}
         options={{
           tabBarIcon: ({ color }) => (
@@ -47,7 +47,7 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="TabThree"
+        name="Settings"
         component={TabThreeNavigator}
         options={{
           tabBarIcon: ({ color }) => (

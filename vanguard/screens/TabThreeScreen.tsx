@@ -10,10 +10,14 @@ export default function TabThreeScreen() {
         <Text style={styles.title}>Settings</Text>
         <Text style={styles.body}>Distance Before Alert</Text>
         <Text style={styles.body}>Crime Score Before Alert</Text>
-        <View style={styles.separator} 
-            lightColor="#eee" 
-            darkColor="rgba(255,255,255,0.1)" />
-        {/* <EditScreenInfo path="/screens/TabThreeScreen.tsx" /> */}
+        <Text style={styles.body}>Primary Notification Method</Text>
+        <Text style={styles.body}>Primary Contact</Text>
+        <View style={styles.center}>
+          <View style={styles.separator} 
+              lightColor="#eee" 
+              darkColor="rgba(255,255,255,0.1)" />
+          {/* <EditScreenInfo path="/screens/TabThreeScreen.tsx" /> */}
+          </View>
       </View>
     );
   }
@@ -21,11 +25,11 @@ export default function TabThreeScreen() {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#EEF5DB',
+      backgroundColor: '#B8D8D8',
     },
     title: {
+      textAlign: 'center',
       fontSize: 20,
       fontWeight: 'bold',
       color: '#4F6367',
@@ -37,10 +41,20 @@ export default function TabThreeScreen() {
         marginLeft: 50,
         color: '#4F6367',
     },
+    settings: {
+        fontSize: 20,
+        marginRight: 200,
+        paddingTop: 30,
+        color: '#4F6367',
+    },
     separator: {
       marginVertical: 30,
       height: 1,
       width: '80%',
     },
+    center: {
+      alignItems: 'center',
+      backgroundColor: '#B8D8D8',
+    }
   });
   
