@@ -51,7 +51,6 @@ export default class TabTwoScreen extends React.Component {
           Location:{this.state.error?"Location access wasn't given (╯°□°）╯︵ ┻━┻"  : ""+this.state.region.latitude+","+this.state.region.longitude}}
         </Text>
         <MapView style={styles.map}
-        ref={map =>{this.map=map}}
         region={this.state.region}
     />
         <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
