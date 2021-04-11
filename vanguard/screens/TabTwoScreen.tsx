@@ -54,7 +54,7 @@ export default class TabTwoScreen extends React.Component {
         <MapView style={styles.map}
         region={this.state.region}
     />
-        <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
+        {/* <EditScreenInfo path="/screens/TabTwoScreen.tsx" /> */}
       </View>
     );
   }
