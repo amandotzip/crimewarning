@@ -39,6 +39,7 @@ export default class TabTwoScreen extends React.Component {
     this._get_location();
   }
   render() {
+  
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Tab Two</Text>
@@ -67,8 +68,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
+    padding: 20,
     fontSize: 20,
     fontWeight: "bold",
+    textAlign: "center",
   },
   separator: {
     marginVertical: 30,
