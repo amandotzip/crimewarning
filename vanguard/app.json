@@ -22,10 +22,17 @@
       "supportsTablet": true
     },
     "android": {
+      "config": {
+        "googleMaps": {
+          "apiKey": ""
+        }},
+        "permissions":[ "LOCATION"],
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
+
       }
+
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
