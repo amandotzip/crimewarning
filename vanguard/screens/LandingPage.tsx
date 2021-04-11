@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, Dimensions, Button } from "react-native";
+import { StyleSheet, Dimensions, Button, Image } from "react-native";
 
 import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
@@ -10,6 +10,8 @@ export default class LandingPage extends React.Component {
     return !this.state.login ? (
       <View style={styles.container}>
         <Text style={styles.title}>Welcome to Vanguard</Text>
+        <Image source={require("./img/check.png")} />
+
         <Button
           title="Log me in"
           onPress={() => this.setState({ login: true })}

@@ -6,7 +6,7 @@ import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
 import * as Location from "expo-location";
 import * as Permissions from "expo-permissions";
-import { MapView, Marker } from "react-native-maps";
+import MapView from "react-native-maps";
 export default class TabTwoScreen extends React.Component {
   courier = CourierClient({
     authorizationToken: "dk_prod_FQV2FZV89CMQD9HXP6VKM85MQJNR",
@@ -100,16 +100,16 @@ export default class TabTwoScreen extends React.Component {
         .catch((err) => console.error(err));
     }
   }
-  mapMarkers = () => {
-    return this.state.reports.map((report) => (
-      <Marker
-        key={report.id}
-        coordinate={{ latitude: report.lat, longitude: report.lon }}
-        title={report.location}
-        description={report.comments}
-      ></Marker>
-    ));
-  };
+  // mapMarkers = () => {
+  //   return this.state.reports.map((report) => (
+  //     <Marker
+  //       key={report.id}
+  //       coordinate={{ latitude: report.lat, longitude: report.lon }}
+  //       title={report.location}
+  //       description={report.comments}
+  //     ></Marker>
+  //   ));
+  // };
   componentDidMount() {
     this._get_location();
   }
@@ -131,9 +131,7 @@ export default class TabTwoScreen extends React.Component {
               "," +
               this.state.region.longitude}
         </Text>
-        <MapView style={styles.map} region={this.state.region}>
-          {this.mapMarkers()}
-        </MapView>
+        <MapView style={styles.map} region={this.state.region}></MapView>
         {/* <EditScreenInfo path="/screens/TabTwoScreen.tsx" /> */}
       </View>
     );
