@@ -146,7 +146,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#B8D8D8",
   },
   title: {
-    padding: 20,
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",
@@ -159,6 +158,6 @@ const styles = StyleSheet.create({
   },
   map: {
     width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height,
+    height: Dimensions.get("window").height - 50,
   },
 });

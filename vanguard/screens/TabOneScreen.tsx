@@ -54,14 +54,20 @@ export default class TabOneScreen extends React.Component {
       <View style={styles.container}>
         <Text style={styles.title}>Information</Text>
         <View style={styles.row}>
-            {/* <Image
+            
+          <Text style={styles.infoBodyText}>{infoBodyOneText}</Text>
+        </View>
+        <Text style={styles.infoBodyText}>Vanguard is here to make sure you know which neighborhoods are actually unsafe</Text>
+        <View style={styles.row}>
+          <Image
             style={styles.tinyLogo}
             source={{
               uri: 'https://reactnative.dev/img/tiny_logo.png',
             }}
-          /> */}
-          <Text style={styles.infoBodyText}>{infoBodyOneText}</Text>
-        </View>
+          /></View>
+        
+        <Text style={styles.title}>Recent Activity</Text>
+        
         {/*<Text style={styles.infoBodyText}>{infoBodyOneText}</Text>*/}
         <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
         {/*<EditScreenInfo path="/screens/TabOneScreen.tsx" />*/}
@@ -76,11 +82,11 @@ const backgroundColor = "#EEF5DB"
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'flex-start',
     backgroundColor: backgroundColor,
   },
   title: {
+    textAlign: 'center',
     fontSize: 30,
     fontWeight: 'bold',
     backgroundColor: backgroundColor,
@@ -94,21 +100,25 @@ const styles = StyleSheet.create({
     backgroundColor: backgroundColor,
   },
   infoBodyText: {
-    flex: 1,
     paddingLeft: 20,
     paddingRight: 20,
+    paddingBottom: 20,
     color: '#4F6367',
     textAlign: 'center',
+  },
+  body: {
+    fontSize: 20,
+    color: '#4F6367',
   },
   row: {
     backgroundColor: backgroundColor,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    flex: 1,
     justifyContent: 'space-around',
   },
   tinyLogo: {
-    width: 50,
-    height: 50,
+    width: 20,
+    height: 20,
+    paddingBottom: 20,
   }
 });
