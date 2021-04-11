@@ -21,7 +21,7 @@ export default function TabThreeScreen() {
 
         <View style={styles.row}>
           <Text style={styles.settingLabel}>Primary Notification Method</Text>
-          <Text style={styles.settingValue}>Text</Text>
+          <Text style={styles.settingValue}>SMS</Text>
         </View>
 
         <View style={styles.row}>
