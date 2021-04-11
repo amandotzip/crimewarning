@@ -9,7 +9,6 @@ export default function TabThreeScreen() {
       <View style={styles.container}>
         <Text style={styles.title}>Settings</Text>
         <Text style={styles.body}>Distance Before Alert</Text>
-        <Text style={styles.settings}>2.0 miles</Text>
         <Text style={styles.body}>Crime Score Before Alert</Text>
         <Text style={styles.body}>Primary Notification Method</Text>
         <Text style={styles.body}>Primary Contact</Text>
