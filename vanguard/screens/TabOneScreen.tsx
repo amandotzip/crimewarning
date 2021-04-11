@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
@@ -31,7 +31,7 @@ export default class TabOneScreen extends React.Component {
 
   // Function which called whenever TabOneScreen component is mounted (when screen loads)
   // Can copy and paste most of the generated Courier code into here.
-  componentDidMount = () => {
+  /*componentDidMount = () => {
       const courier = CourierClient({ authorizationToken: "dk_prod_FQV2FZV89CMQD9HXP6VKM85MQJNR" });
       courier.send({
         eventId: "M230QKVSP04E1PK5XVQ7Y04BG730",
@@ -47,11 +47,22 @@ export default class TabOneScreen extends React.Component {
       }).then(({messageId}) => console.log(messageId))
       .catch(err => console.error(err));
   }
+  */
 
   render () {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Tab One</Text>
+        <Text style={styles.title}>Information</Text>
+        <View style={styles.row}>
+            <Image
+            style={styles.tinyLogo}
+            source={{
+              uri: 'https://reactnative.dev/img/tiny_logo.png',
+            }}
+          />
+          <Text style={styles.infoBodyText}>{infoBodyOneText}</Text>
+        </View>
+        {/*<Text style={styles.infoBodyText}>{infoBodyOneText}</Text>*/}
         <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
         {/*<EditScreenInfo path="/screens/TabOneScreen.tsx" />*/}
       </View>
@@ -59,23 +70,42 @@ export default class TabOneScreen extends React.Component {
   }
 }
 
+const infoBodyOneText = "Lots of neighborhoods get the reputation of being \"unsafe\" simply due to stereotypes."
+const backgroundColor = "#EEF5DB"
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#EEF5DB',
+    justifyContent: 'flex-start',
+    backgroundColor: backgroundColor,
+    marginBottom: 20
   },
   title: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: 'bold',
-    backgroundColor: '#EEF5DB',
+    backgroundColor: backgroundColor,
     color: '#4F6367',
+    margin: 20
   },
   separator: {
     marginVertical: 30,
     height: 1,
     width: '80%',
-    backgroundColor: '#EEF5DB',
+    backgroundColor: backgroundColor,
   },
+  infoBodyText: {
+    flex: 1
+  },
+  row: {
+    backgroundColor: backgroundColor,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    flex: 1,
+    justifyContent: 'space-around'
+  },
+  tinyLogo: {
+    width: 50,
+    height: 50,
+  }
 });
