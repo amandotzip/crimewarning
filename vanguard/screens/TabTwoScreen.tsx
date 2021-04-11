@@ -65,12 +65,14 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: '#EEF5DB',
   },
   title: {
     padding: 20,
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",
+    color: '#4F6367',
   },
   separator: {
     marginVertical: 30,
