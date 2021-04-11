@@ -27,7 +27,7 @@ export default function App() {
     //     Hello
     //   </Text>
     // </View>)
-    null;
+    return null;
   } else {
     return (
       <SafeAreaProvider>

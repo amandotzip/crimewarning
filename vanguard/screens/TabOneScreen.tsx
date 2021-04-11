@@ -54,12 +54,12 @@ export default class TabOneScreen extends React.Component {
       <View style={styles.container}>
         <Text style={styles.title}>Information</Text>
         <View style={styles.row}>
-            <Image
+            {/* <Image
             style={styles.tinyLogo}
             source={{
               uri: 'https://reactnative.dev/img/tiny_logo.png',
             }}
-          />
+          /> */}
           <Text style={styles.infoBodyText}>{infoBodyOneText}</Text>
         </View>
         {/*<Text style={styles.infoBodyText}>{infoBodyOneText}</Text>*/}
@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     color: '#4F6367',
+    textAlign: 'center',
   },
   row: {
     backgroundColor: backgroundColor,
@@ -105,7 +106,6 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     flex: 1,
     justifyContent: 'space-around',
-    paddingLeft: 20,
   },
   tinyLogo: {
     width: 50,
