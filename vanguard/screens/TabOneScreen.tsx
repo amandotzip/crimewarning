@@ -1,13 +1,12 @@
-import * as React from 'react';
-import { StyleSheet, Image } from 'react-native';
+import * as React from "react";
+import { StyleSheet, Image } from "react-native";
 
-import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
+import EditScreenInfo from "../components/EditScreenInfo";
+import { Text, View } from "../components/Themed";
 
 import { CourierClient } from "@trycourier/courier";
 
 export default class TabOneScreen extends React.Component {
-
   /*
   // Email test run with SendGrid
   async sendStuff() {
@@ -49,76 +48,94 @@ export default class TabOneScreen extends React.Component {
   }
   */
 
-  render () {
+  render() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Information</Text>
         <View style={styles.row}>
-            
+          <Image
+            source={require("./img/home.png")}
+            style={{ width: 100, height: 100 }}
+          />
           <Text style={styles.infoBodyText}>{infoBodyOneText}</Text>
         </View>
-        <Text style={styles.infoBodyText}>Vanguard is here to make sure you know which neighborhoods are actually unsafe</Text>
         <View style={styles.row}>
           <Image
-            style={styles.tinyLogo}
-            source={{
-              uri: 'https://reactnative.dev/img/tiny_logo.png',
-            }}
-          /></View>
-        
-        <Text style={styles.title}>Recent Activity</Text>
-        
-        {/*<Text style={styles.infoBodyText}>{infoBodyOneText}</Text>*/}
-        <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+            source={require("./img/checkmark.png")}
+            style={{ width: 100, height: 100 }}
+          />
+        </View>
+        <Text style={styles.infoBodyText}>
+          Vanguard accurately reports unbiased crime ratings per zipcode using
+          national averages from ATTOM API
+        </Text>
+        <View style={styles.row}>
+          <Image
+            source={require("./img/heart.png")}
+            style={{ width: 100, height: 100 }}
+          />
+        </View>
+
+        <Text style={styles.infoBodyText}>
+          Support local businesses through safe methods such as food delivery or
+          advertising to friends
+        </Text>
+        <View
+          style={styles.separator}
+          lightColor="#eee"
+          darkColor="rgba(255,255,255,0.1)"
+        />
         {/*<EditScreenInfo path="/screens/TabOneScreen.tsx" />*/}
       </View>
     );
   }
 }
 
-const infoBodyOneText = "Lots of neighborhoods get the reputation of being \"unsafe\" simply due to stereotypes"
-const backgroundColor = "#EEF5DB"
+const infoBodyOneText =
+  'Lots of neighborhoods get the reputation of being "unsafe" simply due to stereotypes';
+const backgroundColor = "#EEF5DB";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
+    justifyContent: "flex-start",
     backgroundColor: backgroundColor,
   },
   title: {
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 30,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     backgroundColor: backgroundColor,
-    color: '#4F6367',
-    margin: 20
+    color: "#4F6367",
+    margin: 20,
   },
   separator: {
     marginVertical: 30,
     height: 1,
-    width: '80%',
+    width: "80%",
     backgroundColor: backgroundColor,
   },
   infoBodyText: {
     paddingLeft: 20,
     paddingRight: 20,
     paddingBottom: 20,
-    color: '#4F6367',
-    textAlign: 'center',
+    fontSize: 18,
+    color: "#4F6367",
+    textAlign: "center",
   },
   body: {
     fontSize: 20,
-    color: '#4F6367',
+    color: "#4F6367",
   },
   row: {
     backgroundColor: backgroundColor,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
   },
   tinyLogo: {
     width: 20,
     height: 20,
     paddingBottom: 20,
-  }
+  },
 });

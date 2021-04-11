@@ -7,6 +7,7 @@ import { Text, View } from "../components/Themed";
 import * as Location from "expo-location";
 import * as Permissions from "expo-permissions";
 import MapView from "react-native-maps";
+import { Marker } from "react-native-maps";
 export default class TabTwoScreen extends React.Component {
   courier = CourierClient({
     authorizationToken: "dk_prod_FQV2FZV89CMQD9HXP6VKM85MQJNR",
@@ -20,6 +21,7 @@ export default class TabTwoScreen extends React.Component {
       longitudeDelta: 0.0421,
     },
     reports: [],
+    crime_score: "⌛Please wait retrieving crime score.⏳",
   };
   async _get_location() {
     const { status } = await Permissions.askAsync(Permissions.LOCATION);
@@ -32,7 +34,10 @@ export default class TabTwoScreen extends React.Component {
       const {
         coords: { latitude, longitude },
       } = await Location.getCurrentPositionAsync();
+      // -76.9378 38.9897
+
       this._center_map_on(latitude, longitude);
+      // this._center_map_on(38.9897, -76.9378);
     }
   }
   _center_map_on(latitude: Number, longitude: Number) {
@@ -74,6 +79,9 @@ export default class TabTwoScreen extends React.Component {
             const crime_rate_over_nate_avg = parseInt(
               data.response.result.package.item[0].cocrmcytotc
             );
+            this.setState({
+              crime_score: `Crime Score @ Current Location:${crime_rate_over_nate_avg}`,
+            });
             this.send_alert(crime_rate_over_nate_avg);
           });
       })
@@ -124,15 +132,22 @@ export default class TabTwoScreen extends React.Component {
           darkColor="rgba(255,255,255,0.1)"
         />
         <Text style={styles.title}>
-          Location:
           {this.state.error
             ? "Location access wasn't given (╯°□°）╯︵ ┻━┻"
-            : "" +
-              this.state.region.latitude +
-              "," +
-              this.state.region.longitude}
+            : this.state.crime_score}
         </Text>
-        <MapView style={styles.map} region={this.state.region}></MapView>
+        <MapView style={styles.map} region={this.state.region}>
+          <Marker
+            draggable
+            coordinate={{
+              latitude: this.state.region.latitude,
+              longitude: this.state.region.longitude,
+            }}
+            onDragEnd={(e) => {
+              console.log(e.nativeEvent.coordinate);
+            }}
+          />
+        </MapView>
         {/* <EditScreenInfo path="/screens/TabTwoScreen.tsx" /> */}
       </View>
     );
@@ -159,6 +174,6 @@ const styles = StyleSheet.create({
   },
   map: {
     width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height - 50,
+    height: Dimensions.get("window").height - 75,
   },
 });
