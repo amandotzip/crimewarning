@@ -54,7 +54,7 @@ export default class TabTwoScreen extends React.Component {
         <MapView style={styles.map}
         region={this.state.region}
     />
-        <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
+        {/* <EditScreenInfo path="/screens/TabTwoScreen.tsx" /> */}
       </View>
     );
   }
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     width: "80%",
   },
   map: {
-    width: Dimensions.get("window").width / 2,
-    height: Dimensions.get("window").height / 2,
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height / 1.15,
   },
 });
