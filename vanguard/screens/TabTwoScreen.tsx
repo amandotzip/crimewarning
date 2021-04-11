@@ -91,7 +91,7 @@ export default class TabTwoScreen extends React.Component {
   }
 
   send_alert(crime_rate_over_nate_avg) {
-    if (crime_rate_over_nate_avg >= 200) {
+    if (crime_rate_over_nate_avg >= 10) {
       this.courier
         .send({
           eventId: "M230QKVSP04E1PK5XVQ7Y04BG730",
