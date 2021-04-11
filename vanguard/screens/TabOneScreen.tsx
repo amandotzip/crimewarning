@@ -70,7 +70,7 @@ export default class TabOneScreen extends React.Component {
   }
 }
 
-const infoBodyOneText = "Lots of neighborhoods get the reputation of being \"unsafe\" simply due to stereotypes."
+const infoBodyOneText = "Lots of neighborhoods get the reputation of being \"unsafe\" simply due to stereotypes"
 const backgroundColor = "#EEF5DB"
 
 const styles = StyleSheet.create({
@@ -79,7 +79,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     backgroundColor: backgroundColor,
-    marginBottom: 20
   },
   title: {
     fontSize: 30,
@@ -95,14 +94,18 @@ const styles = StyleSheet.create({
     backgroundColor: backgroundColor,
   },
   infoBodyText: {
-    flex: 1
+    flex: 1,
+    paddingLeft: 20,
+    paddingRight: 20,
+    color: '#4F6367',
   },
   row: {
     backgroundColor: backgroundColor,
     flexDirection: 'row',
     flexWrap: 'wrap',
     flex: 1,
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    paddingLeft: 20,
   },
   tinyLogo: {
     width: 50,
