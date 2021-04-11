@@ -99,7 +99,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#B8D8D8",
   },
   title: {
-    padding: 20,
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",

@@ -26,13 +26,20 @@ export default function TabThreeScreen() {
     container: {
       flex: 1,
       justifyContent: 'center',
-      backgroundColor: '#B8D8D8',
+      backgroundColor: "#EEF5DB",
     },
     title: {
       textAlign: 'center',
       fontSize: 20,
       fontWeight: 'bold',
       color: '#4F6367',
+    },
+    row: {
+      backgroundColor: "#EEF5DB",
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      flex: 1,
+      justifyContent: 'space-around',
     },
     body: {
         fontSize: 20,
@@ -54,7 +61,7 @@ export default function TabThreeScreen() {
     },
     center: {
       alignItems: 'center',
-      backgroundColor: '#B8D8D8',
+      backgroundColor: "#EEF5DB",
     }
   });
   
