@@ -1,28 +1,32 @@
 # crimewarning
-## TODO📃
-- Use Attom to get crime data given phone coordinates,and check nearby coordinates
-- Given Attom response, make courier send any form of notificatoin (could also send the users coordinates to the trusted sendee)
-- Add icons to nav bar, continue recoloring, change name of headers and buttons
-- Add page dicussing the implications of what an unsafe area is and how they can be supported (ex. locals or businesses)
-- add welcome page with logo and name, like in the design image
-- design devpost submission document
-- make video to add to devpost submission for presentation of app
-- Make icon and final name for project
-
-
-
-## If we have time
-- Make launchpad website that provides download link or demo of app, could honestly just link to devpost but it should look fancy. Bootstrap would be very fast for that website.
+TODO
 - Make functioning firebase login system
-- data viz of crime information
+- functioning usage of crime api, retrieving crime score, and hoepfully data viz for crime map
+- fucntioning of courier api to send messages through several means (for example sms or push or email)
+- basic UI setup
 
-- ~~fucntioning of courier api to send messages through several means (for example sms or push or email)~~
-- ~~basic UI setup~~
+data object for user
 
 
 
-## Domain.com ideas if we have time to submit (we should, we all get to submit one)
+make domain that makes you say "bah" and sheep will pop up every time
 
-- make domain that makes you say "bah" and sheep will pop up every time
-- bahbahbah.tech
-- BAHINDYOU.tech
+
+
+
+
+https://www.crimeometer.com/docs
+this looks good
+
+spot crime
+- example crime output, lists specific crimes
+
+```
+{ cdid: 46846473,
+    type: 'Assault',
+    date: '12/04/13 06:52 PM',
+    address: '2200 BLOCK OF E SCHOOL DR',
+    link: 'http://spotcrime.com/crime/46846473-bf48f72ccce82295caf2aee6aedca3e1',
+    lat: 33.4037116,
+    lon: -112.0341417 },
+```

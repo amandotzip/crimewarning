@@ -8,8 +8,8 @@ import { CourierClient } from "@trycourier/courier";
 
 export default class TabOneScreen extends React.Component {
 
-  
-  // Example: send a message supporting email & SMS
+  /*
+  // Email test run with SendGrid
   async sendStuff() {
       const courier = CourierClient({ authorizationToken: "dk_prod_FQV2FZV89CMQD9HXP6VKM85MQJNR" });
       courier.send({
@@ -27,9 +27,25 @@ export default class TabOneScreen extends React.Component {
       }).then(({messageId}) => console.log(messageId))
           .catch(err => console.error(err));
   }
+  */
 
+  // Function which called whenever TabOneScreen component is mounted (when screen loads)
+  // Can copy and paste most of the generated Courier code into here.
   componentDidMount = () => {
-    this.sendStuff();
+      const courier = CourierClient({ authorizationToken: "dk_prod_FQV2FZV89CMQD9HXP6VKM85MQJNR" });
+      courier.send({
+        eventId: "M230QKVSP04E1PK5XVQ7Y04BG730",
+        recipientId: "cce68751-102c-44ce-bb99-1af2d3d13287",
+        profile: {
+          phone_number: "240-479-1412",
+        },
+        data: {
+          name: "Ferzam Mohammad",
+        },
+        override: {
+        },
+      }).then(({messageId}) => console.log(messageId))
+      .catch(err => console.error(err));
   }
 
   render () {
@@ -37,7 +53,7 @@ export default class TabOneScreen extends React.Component {
       <View style={styles.container}>
         <Text style={styles.title}>Information</Text>
         <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-        {/* <EditScreenInfo path="/screens/TabOneScreen.tsx" /> */}
+        {/*<EditScreenInfo path="/screens/TabOneScreen.tsx" />*/}
       </View>
     );
   }
