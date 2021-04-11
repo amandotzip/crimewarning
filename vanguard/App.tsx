@@ -13,21 +13,21 @@ export default function App() {
   const colorScheme = useColorScheme();
 
   if (!isLoadingComplete) {
-    return (
-    <View style={styles.container}>
-      <StatusBar
-      />
-      <Text style={styles.title}>
-        Welcome to React Native!
-      </Text>
-      <Text style={styles.title}>
-        To get started, edit App.js
-      </Text>
-      <Text style={styles.title}>
-        Hello
-      </Text>
-    </View>)
-    // null;
+    // return (
+    // <View style={styles.container}>
+    //   <StatusBar
+    //   />
+    //   <Text style={styles.title}>
+    //     Welcome to React Native!
+    //   </Text>
+    //   <Text style={styles.title}>
+    //     To get started, edit App.js
+    //   </Text>
+    //   <Text style={styles.title}>
+    //     Hello
+    //   </Text>
+    // </View>)
+    return null;
   } else {
     return (
       <SafeAreaProvider>
