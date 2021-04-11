@@ -1,13 +1,16 @@
 import * as React from "react";
 import { StyleSheet, Dimensions } from "react-native";
+import { CourierClient } from "@trycourier/courier";
 
 import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
 import * as Location from "expo-location";
 import * as Permissions from "expo-permissions";
-import MapView from "react-native-maps";
+import { MapView, Marker } from "react-native-maps";
 export default class TabTwoScreen extends React.Component {
-  map = null;
+  courier = CourierClient({
+    authorizationToken: "dk_prod_FQV2FZV89CMQD9HXP6VKM85MQJNR",
+  });
   state = {
     error: false,
     region: {
@@ -16,6 +19,7 @@ export default class TabTwoScreen extends React.Component {
       latitudeDelta: 0.0922,
       longitudeDelta: 0.0421,
     },
+    reports: [],
   };
   async _get_location() {
     const { status } = await Permissions.askAsync(Permissions.LOCATION);
@@ -51,18 +55,61 @@ export default class TabTwoScreen extends React.Component {
       },
     };
     console.log(this.state.region.longitude, this.state.region.latitude);
+    // const mile_longitude = 1/54.6
+    // const mile_latitude = 1/1.15
     fetch(
       `https://api.gateway.attomdata.com/areaapi/v2.0.0/hierarchy/lookup?WKTString=POINT(${this.state.region.longitude}%20${this.state.region.latitude})&geoType=ZI`,
       options
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log("Success:", data);
+        // console.log("Success:",data);
+        const area_id = data.response.result.package.item[0].id;
+        fetch(
+          `https://api.gateway.attomdata.com/communityapi/v2.0.0/area/full?AreaId=${area_id}`,
+          options
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            const crime_rate_over_nate_avg = parseInt(
+              data.response.result.package.item[0].cocrmcytotc
+            );
+            this.send_alert(crime_rate_over_nate_avg);
+          });
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   }
+
+  send_alert(crime_rate_over_nate_avg) {
+    if (crime_rate_over_nate_avg >= 200) {
+      this.courier
+        .send({
+          eventId: "M230QKVSP04E1PK5XVQ7Y04BG730",
+          recipientId: "cce68751-102c-44ce-bb99-1af2d3d13287",
+          profile: {
+            phone_number: "240-479-1412",
+          },
+          data: {
+            name: "Ferzam Mohammad",
+          },
+          override: {},
+        })
+        .then(({ messageId }) => console.log(messageId))
+        .catch((err) => console.error(err));
+    }
+  }
+  mapMarkers = () => {
+    return this.state.reports.map((report) => (
+      <Marker
+        key={report.id}
+        coordinate={{ latitude: report.lat, longitude: report.lon }}
+        title={report.location}
+        description={report.comments}
+      ></Marker>
+    ));
+  };
   componentDidMount() {
     this._get_location();
   }
@@ -84,7 +131,9 @@ export default class TabTwoScreen extends React.Component {
               "," +
               this.state.region.longitude}
         </Text>
-        <MapView style={styles.map} region={this.state.region} />
+        <MapView style={styles.map} region={this.state.region}>
+          {this.mapMarkers()}
+        </MapView>
         {/* <EditScreenInfo path="/screens/TabTwoScreen.tsx" /> */}
       </View>
     );
