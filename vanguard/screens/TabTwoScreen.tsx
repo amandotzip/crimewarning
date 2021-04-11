@@ -43,7 +43,8 @@ export default class TabTwoScreen extends React.Component {
         'apikey': "a79c51e7dd2a4aedd82eb2a65f59b18a"
       }
     };
-    fetch(`https://api.gateway.attomdata.com/areaapi/v2.0.0/hierarchy/lookup?WKTString=POINT(${-this.state.region.longitude}%20${this.state.region.latitude})&geoType=ZI`,options)
+    // fetch(`https://api.gateway.attomdata.com/areaapi/v2.0.0/hierarchy/lookup?WKTString=POINT(${-this.state.region.longitude}%20${this.state.region.latitude})&geoType=ZI`,options)
+    fetch(`https://api.gateway.attomdata.com/areaapi/v2.0.0/hierarchy/lookup?WKTString=POINT(${-76.9378}%20${38.9897})&geoType=ZI`,options)
     .then(response => response.json())
     .then((data=>{
       console.log('Success:', data);
