@@ -9,13 +9,13 @@ export default class LandingPage extends React.Component {
   render() {
     return !this.state.login ? (
       <View style={styles.container}>
-        <Text style={styles.title}>Welcome to Vanguard</Text>
-        <Image source={require("./img/check.png")} />
-
-        <Button
-          title="Log me in"
-          onPress={() => this.setState({ login: true })}
+        <Image
+          source={require("./img/check.png")}
+          style={{ width: 300, height: 300 }}
         />
+        <Text style={styles.title}>Welcome to Vanguard</Text>
+
+        <Button title="Log in" onPress={() => this.setState({ login: true })} />
       </View>
     ) : (
       this.props.appNavigator
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   title: {
     padding: 20,
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: "bold",
     textAlign: "center",
     color: "#4F6367",
