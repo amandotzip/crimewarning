@@ -20,6 +20,7 @@ export default class TabTwoScreen extends React.Component {
       longitudeDelta: 0.0421,
     },
     reports: [],
+    crime_score: "⌛Please wait retrieving crime score.⏳",
   };
   async _get_location() {
     const { status } = await Permissions.askAsync(Permissions.LOCATION);
@@ -74,6 +75,9 @@ export default class TabTwoScreen extends React.Component {
             const crime_rate_over_nate_avg = parseInt(
               data.response.result.package.item[0].cocrmcytotc
             );
+            this.setState({
+              crime_score: `Crime Score @ Current Location:${crime_rate_over_nate_avg}`,
+            });
             this.send_alert(crime_rate_over_nate_avg);
           });
       })
@@ -123,13 +127,9 @@ export default class TabTwoScreen extends React.Component {
           darkColor="rgba(255,255,255,0.1)"
         />
         <Text style={styles.title}>
-          Location:
           {this.state.error
             ? "Location access wasn't given (╯°□°）╯︵ ┻━┻"
-            : "" +
-              this.state.region.latitude +
-              "," +
-              this.state.region.longitude}
+            : this.state.crime_score}
         </Text>
         <MapView style={styles.map} region={this.state.region}></MapView>
         {/* <EditScreenInfo path="/screens/TabTwoScreen.tsx" /> */}
@@ -158,6 +158,6 @@ const styles = StyleSheet.create({
   },
   map: {
     width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height - 50,
+    height: Dimensions.get("window").height - 75,
   },
 });
