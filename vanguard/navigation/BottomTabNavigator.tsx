@@ -25,7 +25,7 @@ export default function BottomTabNavigator() {
     <BottomTab.Navigator
       initialRouteName="TabTwo"
       tabBarOptions={{
-        activeTintColor: "7A9E9F" /* Colors[colorScheme].tint */,
+        activeTintColor: "#7A9E9F" /* Colors[colorScheme].tint */,
       }}
     >
       <BottomTab.Screen

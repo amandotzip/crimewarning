@@ -7,6 +7,7 @@ import { Text, View } from "../components/Themed";
 import * as Location from "expo-location";
 import * as Permissions from "expo-permissions";
 import MapView from "react-native-maps";
+import { Marker } from "react-native-maps";
 export default class TabTwoScreen extends React.Component {
   courier = CourierClient({
     authorizationToken: "dk_prod_FQV2FZV89CMQD9HXP6VKM85MQJNR",
@@ -33,7 +34,10 @@ export default class TabTwoScreen extends React.Component {
       const {
         coords: { latitude, longitude },
       } = await Location.getCurrentPositionAsync();
+      // -76.9378 38.9897
+
       this._center_map_on(latitude, longitude);
+      // this._center_map_on(38.9897, -76.9378);
     }
   }
   _center_map_on(latitude: Number, longitude: Number) {
@@ -131,7 +135,18 @@ export default class TabTwoScreen extends React.Component {
             ? "Location access wasn't given (╯°□°）╯︵ ┻━┻"
             : this.state.crime_score}
         </Text>
-        <MapView style={styles.map} region={this.state.region}></MapView>
+        <MapView style={styles.map} region={this.state.region}>
+          <Marker
+            draggable
+            coordinate={{
+              latitude: this.state.region.latitude,
+              longitude: this.state.region.longitude,
+            }}
+            onDragEnd={(e) => {
+              console.log(e.nativeEvent.coordinate);
+            }}
+          />
+        </MapView>
         {/* <EditScreenInfo path="/screens/TabTwoScreen.tsx" /> */}
       </View>
     );

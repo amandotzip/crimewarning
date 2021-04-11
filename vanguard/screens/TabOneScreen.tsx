@@ -53,6 +53,10 @@ export default class TabOneScreen extends React.Component {
       <View style={styles.container}>
         <Text style={styles.title}>Information</Text>
         <View style={styles.row}>
+          <Image
+            source={require("./img/home.png")}
+            style={{ width: 100, height: 100 }}
+          />
           <Text style={styles.infoBodyText}>{infoBodyOneText}</Text>
         </View>
         <View style={styles.row}>
@@ -62,8 +66,8 @@ export default class TabOneScreen extends React.Component {
           />
         </View>
         <Text style={styles.infoBodyText}>
-          Vanguard is here to make sure you know which neighborhoods are
-          actually unsafe
+          Vanguard accurately reports unbiased crime ratings per zipcode using
+          national averages from ATTOM API
         </Text>
         <View style={styles.row}>
           <Image
@@ -115,7 +119,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     paddingBottom: 20,
-    fontSize: 25,
+    fontSize: 18,
     color: "#4F6367",
     textAlign: "center",
   },
