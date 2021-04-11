@@ -21,7 +21,7 @@ export default function TabThreeScreen() {
 
         <View style={styles.row}>
           <Text style={styles.settingLabel}>Primary Notification Method</Text>
-          <Text style={styles.settingValue}>Text</Text>
+          <Text style={styles.settingValue}>SMS</Text>
         </View>
 
         <View style={styles.row}>
@@ -44,14 +44,15 @@ export default function TabThreeScreen() {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent: 'center',
+      justifyContent: 'flex-start',
       backgroundColor: backgroundColor,
     },
     title: {
       textAlign: 'center',
-      fontSize: 20,
+      fontSize: 30,
       fontWeight: 'bold',
       color: '#4F6367',
+      marginTop: 20,
     },
     row: {
       backgroundColor: backgroundColor,
@@ -62,21 +63,15 @@ export default function TabThreeScreen() {
     },
     settingLabel: {
         fontSize: 20,
-/*        marginRight: 200,
-        marginLeft: 50,
-*/      
-        marginRight: 20,
+        paddingRight: 25,
+        marginLeft: 25,
         paddingTop: 30,
         color: '#4F6367',
     },
     settingValue: {
-        fontSize: 20,
-/*        marginRight: 200,
-        marginLeft: 50,
- */     
-        marginRight: 10,
+        fontSize: 20,   
         paddingTop: 30,
-        paddingLeft: 20,
+        marginRight: 25,
         color: '#4F6367',
     },
     settings: {
