@@ -23,7 +23,7 @@ export default function TabThreeScreen() {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#EEF5DB',
+      backgroundColor: '#B8D8D8',
     },
     title: {
       fontSize: 20,

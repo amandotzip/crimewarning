@@ -65,9 +65,9 @@ export default class TabTwoScreen extends React.Component {
           lightColor="#eee"
           darkColor="rgba(255,255,255,0.1)"
         />
-        <Text style={styles.title}>
+        {/* <Text style={styles.title}>
           Location:{this.state.error?"Location access wasn't given (╯°□°）╯︵ ┻━┻"  : ""+this.state.region.latitude+","+this.state.region.longitude}}
-        </Text>
+        </Text> */}
         <MapView style={styles.map}
         region={this.state.region}
     />
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: '#EEF5DB',
+    backgroundColor: '#B8D8D8',
   },
   title: {
     padding: 20,
