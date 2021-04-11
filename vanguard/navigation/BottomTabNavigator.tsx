@@ -23,7 +23,7 @@ export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
   const appNav = (
     <BottomTab.Navigator
-      initialRouteName="TabTwo"
+      initialRouteName="Map"
       tabBarOptions={{
         activeTintColor: "#7A9E9F" /* Colors[colorScheme].tint */,
       }}

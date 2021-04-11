@@ -15,7 +15,7 @@ export default function TabThreeScreen() {
       </View>
 
       <View style={styles.row}>
-        <Text style={styles.settingLabel}>Crime Score Before Alert</Text>
+        <Text style={styles.settingLabel}>Crime Score {'\n'}Before Alert</Text>
         <Text style={styles.settingValue}>200 Points</Text>
       </View>
 
@@ -26,7 +26,7 @@ export default function TabThreeScreen() {
 
       <View style={styles.row}>
         <Text style={styles.settingLabel}>Primary Contact</Text>
-        <Text style={styles.settingValue}>Ferzam Mohammad</Text>
+        <Text style={styles.settingValue}>Ferzam {'\n'}Mohammad</Text>
       </View>
 
       <View style={styles.center}>
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   },
   settingLabel: {
     fontSize: 20,
-    paddingRight: 25,
+    paddingRight: 5,
     marginLeft: 25,
     paddingTop: 30,
     color: "#4F6367",
