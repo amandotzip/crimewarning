@@ -43,7 +43,8 @@ export default class TabTwoScreen extends React.Component {
         'apikey': "a79c51e7dd2a4aedd82eb2a65f59b18a"
       }
     };
-    fetch(`https://api.gateway.attomdata.com/areaapi/v2.0.0/hierarchy/lookup?WKTString=POINT(${-this.state.region.longitude}%20${this.state.region.latitude})&geoType=ZI`,options)
+    // fetch(`https://api.gateway.attomdata.com/areaapi/v2.0.0/hierarchy/lookup?WKTString=POINT(${-this.state.region.longitude}%20${this.state.region.latitude})&geoType=ZI`,options)
+    fetch(`https://api.gateway.attomdata.com/areaapi/v2.0.0/hierarchy/lookup?WKTString=POINT(${-76.9378}%20${38.9897})&geoType=ZI`,options)
     .then(response => response.json())
     .then((data=>{
       console.log('Success:', data);
@@ -64,9 +65,9 @@ export default class TabTwoScreen extends React.Component {
           lightColor="#eee"
           darkColor="rgba(255,255,255,0.1)"
         />
-        <Text style={styles.title}>
+        {/* <Text style={styles.title}>
           Location:{this.state.error?"Location access wasn't given (╯°□°）╯︵ ┻━┻"  : ""+this.state.region.latitude+","+this.state.region.longitude}}
-        </Text>
+        </Text> */}
         <MapView style={styles.map}
         region={this.state.region}
     />
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: '#EEF5DB',
+    backgroundColor: '#B8D8D8',
   },
   title: {
     padding: 20,
@@ -97,6 +98,6 @@ const styles = StyleSheet.create({
   },
   map: {
     width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height / 1.15,
+    height: Dimensions.get("window").height,
   },
 });
