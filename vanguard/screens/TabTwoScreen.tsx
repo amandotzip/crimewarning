@@ -24,6 +24,7 @@ export default class TabTwoScreen extends React.Component {
       // await Permissions.askAsync(Permissions.LOCATION)
     } else {
       const {coords:{latitude,longitude}} = await Location.getCurrentPositionAsync();
+      console.log(await Location.getCurrentPositionAsync())
      this._center_map_on(latitude,longitude)
 
     }
@@ -34,6 +35,8 @@ export default class TabTwoScreen extends React.Component {
       longitude:longitude,
        latitudeDelta: 0.003,
       longitudeDelta: 0.003,} });
+      this.get_crime_info();
+
   }
   get_crime_info(){
     const options = {
@@ -43,6 +46,7 @@ export default class TabTwoScreen extends React.Component {
         'apikey': "a79c51e7dd2a4aedd82eb2a65f59b18a"
       }
     };
+    console.log(-this.state.region.longitude,this.state.region.latitude)
     fetch(`https://api.gateway.attomdata.com/areaapi/v2.0.0/hierarchy/lookup?WKTString=POINT(${-this.state.region.longitude}%20${this.state.region.latitude})&geoType=ZI`,options)
     .then(response => response.json())
     .then((data=>{
