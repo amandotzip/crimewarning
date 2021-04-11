@@ -20,21 +20,21 @@ export default function BottomTabNavigator() {
       initialRouteName="TabOne"
       tabBarOptions={{ activeTintColor: '#FE5F55'/* Colors[colorScheme].tint */ }}>
       <BottomTab.Screen
-        name="TabOne"
+        name="Info"
         component={TabOneNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="information" color={color} />,
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
+        name="Map"
         component={TabTwoNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="location" color={color} />,
         }}
       />
       <BottomTab.Screen
-        name="TabThree"
+        name="Settings"
         component={TabThreeNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="settings" color={color} />,

@@ -35,7 +35,7 @@ export default class TabOneScreen extends React.Component {
   render () {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Tab One</Text>
+        <Text style={styles.title}>Information</Text>
         <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
         {/* <EditScreenInfo path="/screens/TabOneScreen.tsx" /> */}
       </View>
@@ -48,18 +48,16 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#EEF5DB',
+    backgroundColor: '#B8D8D8',
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    backgroundColor: '#EEF5DB',
     color: '#4F6367',
   },
   separator: {
     marginVertical: 30,
     height: 1,
     width: '80%',
-    backgroundColor: '#EEF5DB',
   },
 });
