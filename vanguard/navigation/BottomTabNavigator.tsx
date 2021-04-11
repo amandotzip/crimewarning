@@ -23,7 +23,7 @@ export default function BottomTabNavigator() {
         name="Info"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="information" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="information-circle" color={color} />,
         }}
       />
       <BottomTab.Screen
